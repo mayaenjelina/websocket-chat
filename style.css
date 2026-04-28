@@ -41,7 +41,6 @@ body {
     padding: 15px;
     overflow-y: auto;
     background: #f5f7fb;
-    /* PENTING: Harus flex dan column agar align-self bekerja */
     display: flex;
     flex-direction: column; 
     gap: 10px;
@@ -61,7 +60,7 @@ body {
 .message.other {
     background: #e4e6eb;
     color: #333;
-    align-self: flex-start; /* Nempel ke kiri */
+    align-self: flex-start; 
     border-bottom-left-radius: 5px;
 }
 
@@ -69,7 +68,7 @@ body {
 .message.me {
     background: #4facfe;
     color: white;
-    align-self: flex-end; /* Nempel ke kanan */
+    align-self: flex-end; 
     border-bottom-right-radius: 5px;
 }
 
@@ -121,7 +120,7 @@ body {
     background: #3a8be0;
 }
 
-/* Scrollbar biar lebih clean */
+/* Scrollbar */
 .chat-messages::-webkit-scrollbar {
     width: 6px;
 }

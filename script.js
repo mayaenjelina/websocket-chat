@@ -12,7 +12,7 @@ async function kirim() {
     });
 
     input.value = '';
-    ambilPesan(); // Langsung cek setelah kirim
+    ambilPesan();
 }
 
 // Fungsi Ambil Pesan (HTTP GET)
@@ -21,11 +21,11 @@ async function ambilPesan() {
     const data = await response.json();
     
     const container = document.getElementById('messages');
-    container.innerHTML = ''; // Bersihkan layar dulu
+    container.innerHTML = ''; 
 
     data.forEach(msg => {
         const item = document.createElement('div');
-        item.classList.add('message', 'other'); // Di versi simple ini kita buat kiri semua dulu
+        item.classList.add('message', 'other'); 
         item.textContent = msg.text;
         container.appendChild(item);
     });
@@ -36,21 +36,19 @@ async function ambilPesan() {
 // JALANKAN POLLING: Otomatis cek server setiap 2 detik
 setInterval(ambilPesan, 2000);
 
-// Tombol Enter
 document.getElementById('input').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') kirim();
 });
 
-
+// web socket
 // var socket = io();
 
 // function kirim() {
 //     var input = document.getElementById('input');
     
-//     // Validasi agar tidak kirim pesan kosong
 //     if (input.value.trim() === '') return;
 
-//     // 1. Munculkan bubble chat KITA sendiri di KANAN
+//  
 //     var item = document.createElement('div');
 //     item.classList.add('message', 'me'); // Pastikan ini 'me' sesuai CSS
 //     item.textContent = input.value;
