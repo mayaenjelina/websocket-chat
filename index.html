@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Chat Real-time - Tugas Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+           Aplikasi Chat Real-time (WebSocket)
+
+        </div>
+        
+        <div class="chat-messages" id="messages">
+            </div>
+
+        <div class="chat-input-area">
+            <input id="input" autocomplete="off" placeholder="Ketik pesan anda di sini...">
+            <button id="send-btn" onclick="kirim()">Kirim</button>
+        </div>
+    </div>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="script.js"></script>
+</body>
+</html>

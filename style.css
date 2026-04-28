@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.chat-container {
+    width: 400px;
+    height: 600px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.chat-header {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Messages area */
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f5f7fb;
+    /* PENTING: Harus flex dan column agar align-self bekerja */
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+/* Bubble umum */
+.message {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+/* Pesan ORANG LAIN (KIRI) */
+.message.other {
+    background: #e4e6eb;
+    color: #333;
+    align-self: flex-start; /* Nempel ke kiri */
+    border-bottom-left-radius: 5px;
+}
+
+/* Pesan SENDIRI (KANAN) */
+.message.me {
+    background: #4facfe;
+    color: white;
+    align-self: flex-end; /* Nempel ke kanan */
+    border-bottom-right-radius: 5px;
+}
+
+/* Sistem message (Tengah) */
+.message.system {
+    align-self: center;
+    background: #fff3cd;
+    color: #856404;
+    font-size: 11px;
+    border-radius: 10px;
+    padding: 5px 12px;
+    text-align: center;
+    max-width: 90%;
+}
+
+/* Input area */
+.chat-input-area {
+    display: flex;
+    padding: 15px;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+/* Input */
+.chat-input-area input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+    background: #f9f9f9;
+}
+
+/* Button */
+.chat-input-area button {
+    margin-left: 10px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 20px;
+    background: #4facfe;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chat-input-area button:hover {
+    background: #3a8be0;
+}
+
+/* Scrollbar biar lebih clean */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
